@@ -9,15 +9,17 @@ const game = document.querySelector('.game');
 const imgs = ["red.png","blue.png","pink.png",'blue.png','orange.png'];
 let imgCount =0;
 
+// click on box to create ballons
+
 const clickBox = box.addEventListener('click',()=> {
     handle.style.animation += 'hndl .5s 3 ease-out';
     
-    const div = document.createElement('div');
+    const div = document.createElement('div'); //add ballons div
     div.className = 'balloon';
     game.appendChild(div);
     div.classList.add('animate');
     
-    const img = document.createElement('img');
+    const img = document.createElement('img'); 
     img.className = 'ballon';
     div.appendChild(img);
     img.src = imgs[imgCount];
@@ -26,8 +28,8 @@ const clickBox = box.addEventListener('click',()=> {
     }else{
         imgCount++;
     }
-    
-    div.addEventListener('click', () => {
+    //click to remove ballon
+    div.addEventListener('click', () => { 
             const remove = document.querySelector('.balloon');
             remove.remove();
 
